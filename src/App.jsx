@@ -23,11 +23,11 @@ const App = () => {
     setBloqueado(true);
 
     try {
-      toast.info('🔄 Carregando nova pergunta...');
+      toast.info('🔄 Loading new question...');
       const response = await fetch(API_URL);
 
       if (response.status === 429) {
-        toast.error('🚨 Muitas requisições! Aguarde alguns segundos...');
+        toast.error('🚨 Many requests! Wait a few seconds...');
         setTimeout(() => {
           setBloqueado(false);
         }, 5000);
@@ -37,7 +37,7 @@ const App = () => {
       const data = await response.json();
 
       if (!data.results || data.results.length === 0) {
-        throw new Error('Nenhuma pergunta encontrada.');
+        throw new Error('No questions found.');
       }
 
       const resultado = data.results[0];
@@ -59,7 +59,7 @@ const App = () => {
       setJogoEncerrado(false);
       setShowConfetti(false);
 
-      toast.success('✅ Nova pergunta carregada!');
+      toast.success('✅ New question loaded!');
     } catch (erro) {
       toast.error(`❌ Erro: ${erro.message}`);
     } finally {
@@ -74,12 +74,12 @@ const App = () => {
     setRespostaSelecionada(resposta);
 
     if (resposta === pergunta.resposta) {
-      toast.success('🎉 Resposta correta!');
+      toast.success('🎉 Correct answer!');
       pontosRef.current += 1;
       setShowConfetti(true);
       audioRef.current.play();
     } else {
-      toast.error(`😢 Errado! A resposta correta era: ${pergunta.resposta}`);
+      toast.error(`😢 Wrong! The correct answer was: ${pergunta.resposta}`);
       setJogoEncerrado(true);
     }
 
@@ -88,7 +88,7 @@ const App = () => {
 
   function handleNextQuestion() {
     if (!respondeu) {
-      toast.warning('⚠️ Você precisa responder antes de avançar!');
+      toast.warning('⚠️ You need to answer before you can move forward!');
       return;
     }
     fetchPergunta();
