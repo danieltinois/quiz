@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, button, input, textarea, select  {
+  font-family: "Roboto Mono", serif;
+}
+
+/* Estilizando botões */
+button {
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0.5rem;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+}
+
+/* Estilizando inputs */
+input {
+  padding: 10px;
+  border: 2px solid #ff758c;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #ff7eb3;
+  box-shadow: 0 0 10px rgba(255, 117, 140, 0.5);
+}
+
+/* Estilizando caixas de seleção */
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #ff758c;
+}
+
+/* Estilizando radio buttons */
+input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #ff7eb3;
+}
+
+/* Estilizando textareas */
+textarea {
+  padding: 10px;
+  border: 2px solid #ff758c;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  width: 100%;
+  min-height: 100px;
+  transition: all 0.3s ease;
+}
+
+textarea:focus {
+  border-color: #ff7eb3;
+  box-shadow: 0 0 10px rgba(255, 117, 140, 0.5);
+}
+
+/* Estilizando select */
+select {
+  padding: 10px;
+  border: 2px solid #ff758c;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+select:hover {
+  border-color: #ff7eb3;
+}
+
+/* Animação para hover divertido */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  75% { transform: rotate(-2deg); }
+}
+
+button:hover {
+  animation: wiggle 0.2s ease-in-out;
+}
