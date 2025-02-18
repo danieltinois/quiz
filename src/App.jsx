@@ -3,6 +3,8 @@ import ButtonGame from './components/ButtonGame';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Confetti from 'react-confetti';
+import Score from './components/Score';
+import Question from './components/Question';
 
 const API_URL = 'https://opentdb.com/api.php?amount=1&type=multiple';
 
@@ -120,47 +122,15 @@ const App = () => {
       <h1 style={{ display: 'flex', justifyContent: 'center' }}>
         🧠 Interactive Quiz 🧠
       </h1>
-      <h3
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          paddingTop: '1rem',
-        }}
-      >
-        Score: {pontos}
-      </h3>
+      <Score pontos={pontos} />
       {pergunta && (
-        <>
-          <h2
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              margin: '1rem',
-            }}
-            dangerouslySetInnerHTML={{ __html: pergunta.pergunta }}
-          />
-          <div>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-              }}
-            >
-              {pergunta.alternativas.map((resposta) => (
-                <button
-                  key={resposta}
-                  onClick={() => verificarResposta(resposta)}
-                  style={{
-                    backgroundColor:
-                      respostaSelecionada === resposta ? 'lightgray' : 'white',
-                  }}
-                  disabled={respondeu}
-                  dangerouslySetInnerHTML={{ __html: resposta }}
-                />
-              ))}
-            </div>
-          </div>
-        </>
+        <Question
+          pergunta={pergunta.pergunta}
+          alternativas={pergunta.alternativas}
+          respostaSelecionada={respostaSelecionada}
+          verificarResposta={verificarResposta}
+          respondeu={respondeu}
+        />
       )}
       {jogoEncerrado ? (
         <ButtonGame onClick={reiniciarJogo} texto={'🔄 Restart'} />
