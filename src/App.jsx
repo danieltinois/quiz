@@ -18,7 +18,8 @@ const App = () => {
   const [showConfetti, setShowConfetti] = useState(false);
 
   const pontosRef = useRef(0);
-  const audioRef = useRef(new Audio('./correct.mp3'));
+  const audioCorrectRef = useRef(new Audio('./correct.mp3'));
+  const audioIncorrectRef = useRef(new Audio('./incorrect.mp3'));
 
   async function fetchPergunta() {
     if (bloqueado) return; // Evita múltiplas requisições simultâneas
@@ -79,9 +80,10 @@ const App = () => {
       toast.success('🎉 Correct answer!');
       pontosRef.current += 1;
       setShowConfetti(true);
-      audioRef.current.play();
+      audioCorrectRef.current.play();
     } else {
       toast.error(`😢 Wrong! The correct answer was: ${pergunta.resposta}`);
+      audioIncorrectRef.current.play();
       setJogoEncerrado(true);
     }
 
