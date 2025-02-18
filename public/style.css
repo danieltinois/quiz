@@ -6,22 +6,33 @@
   box-sizing: border-box;
 }
 
-body, button, input, textarea, select  {
+body, button, input, textarea, select {
   font-family: "Roboto Mono", serif;
+}
+
+/* Estilo global para aumentar o tamanho do texto */
+h1, h2, h3 {
+  font-size: 2rem; /* Aumentando o tamanho das fontes */
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem; /* Ajustando o tamanho da pergunta */
+  margin: 1rem;
 }
 
 /* Estilizando botões */
 button {
   background: linear-gradient(135deg, #ff7eb3, #ff758c);
   color: white;
-  font-size: 16px;
-  padding: 10px 20px;
+  font-size: 20px; /* Aumentando o tamanho da fonte do botão */
+  padding: 15px 30px; /* Aumentando o padding para botões maiores */
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 0.5rem;
+  margin: 1rem;
 }
 
 button:hover {
@@ -30,11 +41,14 @@ button:hover {
 }
 
 /* Estilizando inputs */
+input, textarea, select {
+  font-size: 18px; /* Aumentando o tamanho da fonte dos inputs e select */
+}
+
 input {
-  padding: 10px;
+  padding: 12px;
   border: 2px solid #ff758c;
   border-radius: 8px;
-  font-size: 16px;
   outline: none;
   transition: all 0.3s ease;
 }
@@ -46,27 +60,27 @@ input:focus {
 
 /* Estilizando caixas de seleção */
 input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+  width: 24px; /* Aumentando o tamanho da caixa de seleção */
+  height: 24px;
   accent-color: #ff758c;
 }
 
 /* Estilizando radio buttons */
 input[type="radio"] {
-  width: 18px;
-  height: 18px;
+  width: 22px; /* Aumentando o tamanho dos radio buttons */
+  height: 22px;
   accent-color: #ff7eb3;
 }
 
 /* Estilizando textareas */
 textarea {
-  padding: 10px;
+  padding: 12px;
   border: 2px solid #ff758c;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 18px; /* Aumentando o tamanho da fonte da textarea */
   outline: none;
   width: 100%;
-  min-height: 100px;
+  min-height: 120px;
   transition: all 0.3s ease;
 }
 
@@ -77,10 +91,10 @@ textarea:focus {
 
 /* Estilizando select */
 select {
-  padding: 10px;
+  padding: 12px;
   border: 2px solid #ff758c;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 18px; /* Aumentando o tamanho da fonte do select */
   outline: none;
   cursor: pointer;
   transition: all 0.3s ease;

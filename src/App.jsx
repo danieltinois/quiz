@@ -105,7 +105,16 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        justifyItems: 'center',
+        alignItems: 'center',
+        height: '100vh',
+      }}
+    >
       <ToastContainer position="top-right" autoClose={3000} />
       {showConfetti && <Confetti />}
       <h1 style={{ display: 'flex', justifyContent: 'center' }}>
