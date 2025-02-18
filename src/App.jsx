@@ -118,7 +118,7 @@ const App = () => {
       <ToastContainer position="top-right" autoClose={3000} />
       {showConfetti && <Confetti />}
       <h1 style={{ display: 'flex', justifyContent: 'center' }}>
-        🧠 Interactive Quiz
+        🧠 Interactive Quiz 🧠
       </h1>
       <h3
         style={{
