@@ -12,12 +12,12 @@ body, button, input, textarea, select {
 
 /* Estilo global para aumentar o tamanho do texto */
 h1, h2, h3 {
-  font-size: 2rem; /* Aumentando o tamanho das fontes */
+  font-size: 2rem;
   text-align: center;
 }
 
 h2 {
-  font-size: 1.5rem; /* Ajustando o tamanho da pergunta */
+  font-size: 1.5rem;
   margin: 1rem;
 }
 
@@ -25,30 +25,30 @@ h2 {
 button {
   background: linear-gradient(135deg, #ff7eb3, #ff758c);
   color: white;
-  font-size: 20px; /* Aumentando o tamanho da fonte do botão */
-  padding: 15px 30px; /* Aumentando o padding para botões maiores */
+  font-size: 18px; /* Reduzindo o tamanho da fonte */
+  padding: 15px 30px; /* Reduzindo o padding */
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
   margin: 1rem;
 }
 
 button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05); /* Leve aumento para não exagerar */
   background: linear-gradient(135deg, #ff758c, #ff7eb3);
 }
 
 /* Estilizando inputs */
 input, textarea, select {
-  font-size: 18px; /* Aumentando o tamanho da fonte dos inputs e select */
+  font-size: 16px; /* Fontes menores */
+  padding: 10px; /* Padding reduzido */
 }
 
 input {
-  padding: 12px;
   border: 2px solid #ff758c;
-  border-radius: 8px;
+  border-radius: 12px;
   outline: none;
   transition: all 0.3s ease;
 }
@@ -59,28 +59,21 @@ input:focus {
 }
 
 /* Estilizando caixas de seleção */
-input[type="checkbox"] {
-  width: 24px; /* Aumentando o tamanho da caixa de seleção */
+input[type="checkbox"], input[type="radio"] {
+  width: 24px; /* Diminuindo o tamanho */
   height: 24px;
   accent-color: #ff758c;
 }
 
-/* Estilizando radio buttons */
-input[type="radio"] {
-  width: 22px; /* Aumentando o tamanho dos radio buttons */
-  height: 22px;
-  accent-color: #ff7eb3;
-}
-
 /* Estilizando textareas */
 textarea {
-  padding: 12px;
+  padding: 10px;
   border: 2px solid #ff758c;
-  border-radius: 8px;
-  font-size: 18px; /* Aumentando o tamanho da fonte da textarea */
+  border-radius: 12px;
+  font-size: 16px; /* Fonte menor */
   outline: none;
   width: 100%;
-  min-height: 120px;
+  min-height: 120px; /* Ajustando altura */
   transition: all 0.3s ease;
 }
 
@@ -91,10 +84,10 @@ textarea:focus {
 
 /* Estilizando select */
 select {
-  padding: 12px;
+  padding: 10px;
   border: 2px solid #ff758c;
-  border-radius: 8px;
-  font-size: 18px; /* Aumentando o tamanho da fonte do select */
+  border-radius: 12px;
+  font-size: 16px; /* Fonte menor */
   outline: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -104,13 +97,47 @@ select:hover {
   border-color: #ff7eb3;
 }
 
-/* Animação para hover divertido */
-@keyframes wiggle {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(2deg); }
-  75% { transform: rotate(-2deg); }
+/* Responsividade */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem; /* Menos espaçamento nas laterais */
+  }
+
+  h1, h2, h3 {
+    font-size: 1.8rem; /* Fontes menores */
+  }
+
+  button {
+    font-size: 16px; /* Diminuindo o tamanho da fonte */
+    padding: 12px 24px; /* Botões mais compactos */
+    margin: 1rem;
+  }
+
+  input, textarea, select {
+    font-size: 14px; /* Fontes menores */
+    padding: 8px; /* Padding menor */
+  }
+
+  .content-container {
+    padding: 15px; /* Menos padding */
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
-button:hover {
-  animation: wiggle 0.2s ease-in-out;
+@media (max-width: 480px) {
+  h1, h2, h3 {
+    font-size: 1.5rem; /* Fontes ainda menores */
+  }
+
+  button {
+    font-size: 14px; /* Fontes bem menores */
+    padding: 10px 20px; /* Botões mais compactos */
+    margin: 1rem;
+  }
+
+  input, textarea, select {
+    font-size: 12px; /* Fontes bem menores */
+    padding: 6px; /* Padding bem reduzido */
+  }
 }
