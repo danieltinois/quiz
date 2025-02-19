@@ -25,8 +25,8 @@ Este projeto é um **Quiz Interativo** desenvolvido com **React.js** e **Vite**.
 1. **Clone o repositório:**
 
    ```sh
-   git clone https://github.com/seu-usuario/quiz-interativo.git
-   cd quiz-interativo
+   git clone https://github.com/danieltinois/quiz.git
+   cd quiz
    ```
 
 2. **Instale as dependências:**
