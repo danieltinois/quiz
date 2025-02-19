@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap');
 
 * {
   margin: 0;
@@ -40,62 +42,52 @@ button:hover {
   background: linear-gradient(135deg, #ff758c, #ff7eb3);
 }
 
-/* Estilizando inputs */
-input, textarea, select {
-  font-size: 16px; /* Fontes menores */
-  padding: 10px; /* Padding reduzido */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-input {
-  border: 2px solid #ff758c;
-  border-radius: 12px;
-  outline: none;
-  transition: all 0.3s ease;
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-in-out forwards;
+
 }
 
-input:focus {
-  border-color: #ff7eb3;
-  box-shadow: 0 0 10px rgba(255, 117, 140, 0.5);
+.github-logo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  opacity: 0.8;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-/* Estilizando caixas de seleção */
-input[type="checkbox"], input[type="radio"] {
-  width: 24px; /* Diminuindo o tamanho */
-  height: 24px;
-  accent-color: #ff758c;
-}
-
-/* Estilizando textareas */
-textarea {
-  padding: 10px;
-  border: 2px solid #ff758c;
-  border-radius: 12px;
-  font-size: 16px; /* Fonte menor */
-  outline: none;
+.github-logo img {
   width: 100%;
-  min-height: 120px; /* Ajustando altura */
-  transition: all 0.3s ease;
+  height: 100%;
 }
 
-textarea:focus {
-  border-color: #ff7eb3;
-  box-shadow: 0 0 10px rgba(255, 117, 140, 0.5);
+.github-logo:hover {
+  transform: scale(1.1);
+  opacity: 1;
 }
 
-/* Estilizando select */
-select {
-  padding: 10px;
-  border: 2px solid #ff758c;
-  border-radius: 12px;
-  font-size: 16px; /* Fonte menor */
-  outline: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-select:hover {
-  border-color: #ff7eb3;
-}
+
 
 /* Responsividade */
 @media (max-width: 768px) {
@@ -113,10 +105,6 @@ select:hover {
     margin: 1rem;
   }
 
-  input, textarea, select {
-    font-size: 14px; /* Fontes menores */
-    padding: 8px; /* Padding menor */
-  }
 
   .content-container {
     padding: 15px; /* Menos padding */
